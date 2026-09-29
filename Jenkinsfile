@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/ajaykumarr15/nginx_cicd-.git'
+                git(
+                    url: 'https://github.com/ajaykumarr15/nginx_cicd-.git',
+                    branch: 'main',
+                    credentialsId: 'github-creds'
+                )
             }
         }
 
@@ -18,4 +22,3 @@ pipeline {
         }
     }
 }
-
